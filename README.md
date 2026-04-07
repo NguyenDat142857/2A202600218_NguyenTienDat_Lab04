@@ -97,31 +97,21 @@ Dữ liệu mô phỏng trong `tools.py`:
 git clone <your-repo>
 cd TravelBuddy
 
-Tạo môi trường (optional)
+## Tạo môi trường (optional)
 python -m venv venv
 venv\Scripts\activate   # Windows
 Cài dependencies
 pip install -r requirements.txt
-🔐 Cấu hình API
+## 🔐 Cấu hình API
 
 Tạo file .env:
 
 OPENROUTER_API_KEY=your_api_key_here
-▶️ Chạy chương trình
+## ▶️ Chạy chương trình
 python agent.py
-🧪 Test Tự Động
-python test_auto.py
+## 🧪 Demo & Test
 
-👉 Kết quả được lưu tại:
+Các test được thực hiện thủ công bằng cách chạy:
 
-test_results.md
-🧪 Demo Kết Quả
-
-👉 Xem chi tiết tại: test_results.md
-
-Preview:
-✈️ VietJet Air | 16:00 → 18:15 | 1.100.000₫  
-🏨 Lahana Resort | 800.000₫/đêm  
-
-💰 Tổng: 2.700.000₫  
-👉 Còn lại: 2.300.000₫  
+```bash
+python agent.py
