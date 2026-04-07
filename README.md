@@ -135,6 +135,8 @@ Chào bạn! Mình là TravelBuddy, rất vui được đồng hành cùng bạn
 
 - 👥 Chuyến đi có bao nhiêu người?
 - Gợi ý: Đà Nẵng, Đà Lạt, Phú Quốc, Sapa...
+  
+---
 ### ✅ Test 2 – Single Tool Call (Search Flights)
 
 🔹 Input
@@ -151,6 +153,8 @@ Tìm giúp tôi chuyến bay từ Hà Nội đi Đà Nẵng
 - VietJet Air: 890.000₫
 - Bamboo Airways: 1.200.000₫
 - Vietnam Airlines: 1.450.000₫
+
+---
 ### ✅ Test 3 – Multi-step Tool Usage (Flights + Hotels + Budget)
 
 🔹 Input
@@ -168,6 +172,8 @@ Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn 
 🏨 Khách sạn: 400.000₫
 💰 Tổng: 2.600.000₫
 📊 Còn lại: 2.400.000₫
+
+---
 ### ✅ Test 4 – Missing Information (Clarification)
 
 🔹 Input
@@ -180,6 +186,8 @@ Tôi muốn đặt khách sạn
 🏨 9Station Hostel – 200.000₫/đêm
 
 Bạn muốn đặt 2 đêm không?
+
+---
 ### ✅ Test 5 – Guardrail / Refusal (Ngoài phạm vi)
 
 🔹 Input
@@ -190,3 +198,4 @@ Giải giúp tôi bài tập lập trình Python về linked list
 
 🤖 TravelBuddy:
 Xin lỗi, tôi chỉ hỗ trợ các câu hỏi liên quan đến du lịch.
+---
