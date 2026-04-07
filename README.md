@@ -93,15 +93,6 @@ Dữ liệu mô phỏng trong `tools.py`:
 
 ## 🚀 Cách Cài Đặt
 
- **Tạo virtual environment (tùy chọn)**
-   ```bash
-   python -m venv venv
-   # Windows
-   venv\Scripts\activate
-   # macOS/Linux
-   source venv/bin/activate
-   ```
-
  **Cài đặt dependencies**
    ```bash
    pip install -r requirements.txt
@@ -111,9 +102,12 @@ Dữ liệu mô phỏng trong `tools.py`:
    
    Tạo file `.env` trong thư mục gốc dự án:
    ```env
-   OLLAMA_BASE_URL=https://kelkoo-her-murphy-rank.trycloudflare.com/v1
-   MODEL_NAME=llama3.1:8b
-   OLLAMA_API_KEY=your_api_key_here
+   llm = ChatOpenAI(
+    model="openai/gpt-oss-120b:free",  # 🔥 MODEL MỚI
+    openai_api_key=OPENROUTER_API_KEY,
+    openai_api_base="https://openrouter.ai/api/v1",
+    temperature=0.3,
+)
    ```
 
 ### Chạy Agent
@@ -124,11 +118,11 @@ python agent.py
 
 
 👉 Kết quả được lưu tại:
-
+### 
 test_results.md
 
-🧪 Test Results
-✅ Test 1 – Direct Answer (Không dùng tool)
+
+### ✅ Test 1 – Direct Answer (Không dùng tool)
 
 🔹 Input
 
@@ -141,7 +135,7 @@ Chào bạn! Mình là TravelBuddy, rất vui được đồng hành cùng bạn
 
 - 👥 Chuyến đi có bao nhiêu người?
 - Gợi ý: Đà Nẵng, Đà Lạt, Phú Quốc, Sapa...
-✅ Test 2 – Single Tool Call (Search Flights)
+### ✅ Test 2 – Single Tool Call (Search Flights)
 
 🔹 Input
 
@@ -157,7 +151,7 @@ Tìm giúp tôi chuyến bay từ Hà Nội đi Đà Nẵng
 - VietJet Air: 890.000₫
 - Bamboo Airways: 1.200.000₫
 - Vietnam Airlines: 1.450.000₫
-✅ Test 3 – Multi-step Tool Usage (Flights + Hotels + Budget)
+### ✅ Test 3 – Multi-step Tool Usage (Flights + Hotels + Budget)
 
 🔹 Input
 
@@ -174,7 +168,7 @@ Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn 
 🏨 Khách sạn: 400.000₫
 💰 Tổng: 2.600.000₫
 📊 Còn lại: 2.400.000₫
-✅ Test 4 – Missing Information (Clarification)
+### ✅ Test 4 – Missing Information (Clarification)
 
 🔹 Input
 
@@ -186,7 +180,7 @@ Tôi muốn đặt khách sạn
 🏨 9Station Hostel – 200.000₫/đêm
 
 Bạn muốn đặt 2 đêm không?
-❌ Test 5 – Guardrail / Refusal (Ngoài phạm vi)
+### ✅ Test 5 – Guardrail / Refusal (Ngoài phạm vi)
 
 🔹 Input
 
