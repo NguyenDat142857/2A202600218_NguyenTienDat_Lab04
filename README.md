@@ -199,3 +199,10 @@ Giải giúp tôi bài tập lập trình Python về linked list
 🤖 TravelBuddy:
 Xin lỗi, tôi chỉ hỗ trợ các câu hỏi liên quan đến du lịch.
 ---
+
+## 👨‍💻 Thông Tin Tác Giả
+
+**Sinh viên**: 2A202600218_Nguyễn Tiến Đạt  
+**Khóa học**: AI in Action - Day 4  
+**Thời gian**: 07 April 2026
+
