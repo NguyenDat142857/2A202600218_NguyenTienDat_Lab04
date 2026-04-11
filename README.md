@@ -119,7 +119,7 @@ python agent.py
 
 👉 Kết quả được lưu tại:
 ### 
-test_results.md
+[test_results.md](test_results.md)
 
 
 ### ✅ Test 1 – Direct Answer (Không dùng tool)
