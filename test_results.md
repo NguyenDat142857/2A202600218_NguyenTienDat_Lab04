@@ -1,101 +1,76 @@
-✅ Test 1 – Direct Answer (Không dùng tool)
+### ✅ Test 1 – Direct Answer (Không dùng tool)
 
-Input:
-
-Xin chào! Tôi đang muốn đi du lịch nhưng chưa biết đi đâu
-
-Console Output:
-
-🤖 TravelBuddy:
-Chào bạn! Mình là TravelBuddy, rất vui được đồng hành cùng bạn lên kế hoạch cho chuyến đi sắp tới 🌴✨
-
-Để mình có thể tìm vé máy bay, gợi ý khách sạn phù hợp và tính toán chi phí chính xác nhất, bạn vui lòng chia sẻ thêm một vài thông tin nhé:
+Bạn: Xin chào! Tôi đang muốn đi du lịch nhưng chưa biết đi đâu
+TravelBuddy: Chào bạn! Mình là TravelBuddy, rất vui được đồng hành cùng bạn lên kế hoạch cho chuyến đi sắp tới 🌴✨
+Để mình có thể tìm vé máy bay, gợi ý khách sạn phù hợp và tính toán chi phí chính xác nhất, bạn vui lòng chia sẻ thêm một vài thông tin nhé:    
 - 👥 Chuyến đi có bao nhiêu người?
+Nếu bạn chưa có ý tưởng cụ thể, mình có thể gợi ý nhanh một số điểm đến "hot" tại Việt Nam như: Đà Nẵng – Hội An, Đà Lạt, Nha Trang, Phú Quốc, Sapa hay Hà Nội – Ninh Bình. Bạn thích phong cách nào nhất? Cứ nhắn mình nhé, mình sẽ hỗ trợ tìm vé, tính ngân sách và đặt khách sạn ngay! 😊
 
-Nếu bạn chưa có ý tưởng cụ thể, mình có thể gợi ý nhanh một số điểm đến "hot" tại Việt Nam như:
-Đà Nẵng – Hội An, Đà Lạt, Nha Trang, Phú Quốc, Sapa hay Hà Nội – Ninh Bình.
+  
+---
+### ✅ Test 2 – Single Tool Call (Search Flights)
 
-Bạn thích phong cách nào nhất? 😊
-✅ Test 2 – Single Tool Call (Search Flights)
-
-Input:
-
-Tìm giúp tôi chuyến bay từ Hà Nội đi Đà Nẵng
-
-Console Output:
-
-🧠 Agent đang suy nghĩ...
-🛠 Tool: search_flights | args: {'origin': 'Hà Nội', 'destination': 'Đà Nẵng'}
-
-🤖 TravelBuddy:
-✈️ Chuyến bay:
+Bạn: Tìm giúp tôi chuyến bay từ Hà Nội đi Đà Nẵng
+Gọi tool: search_flights ({'origin': 'Hà Nội', 'destination': 'Đà Nẵng'})
+TravelBuddy: ✈️ Chuyến bay:
+Dưới đây là các chuyến bay từ Hà Nội đi Đà Nẵng:
 - VietJet Air: 890.000₫
 - Bamboo Airways: 1.200.000₫
 - Vietnam Airlines: 1.450.000₫
 - Vietnam Airlines: 2.800.000₫
+Bạn có muốn mình tìm thêm khách sạn tại Đà Nẵng hoặc tính toán chi phí cho chuyến đi không? Nếu có, hãy cho mình biết tổng ngân sách và các khoản chi tiêu dự kiến nhé!
 
-Bạn có muốn mình tìm thêm khách sạn tại Đà Nẵng không?
-✅ Test 3 – Multi-step Tool Usage (Flights + Hotels + Budget)
 
-Input:
+---
+### ✅ Test 3 – Multi-step Tool Usage (Flights + Hotels + Budget)
 
-Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp!
-
-Console Output:
+Bạn: Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp!
 
 🧠 Agent đang suy nghĩ...
-🛠 Tool: search_flights | args: {'origin': 'Hà Nội', 'destination': 'Phú Quốc'}
+🛠 Tool: search_flights | args: {'origin': 'Hà N
+ội', 'destination': 'Phú Quốc'}
 
 🧠 Agent đang suy nghĩ...
-🛠 Tool: search_hotels | args: {'city': 'Phú Quốc', 'max_price_per_night': 1500000}
-
-⚠️ Model không gọi tool (bình thường với free model)
-
-🤖 TravelBuddy:
-✈️ Chuyến bay:
-- VietJet Air 16:00 → 18:15 | 1.100.000₫
-
-🏨 Khách sạn:
-- 9Station Hostel – 200.000₫/đêm
-
-💰 Chi phí:
-- Vé máy bay: 2.200.000₫
-- Khách sạn: 400.000₫
-👉 Tổng: 2.600.000₫
-
-📊 Còn lại:
-5.000.000₫ – 2.600.000₫ = 2.400.000₫
-
-💡 Gợi ý:
-Bạn có thể nâng cấp khách sạn hoặc dùng phần còn lại cho ăn uống và tham quan.
-✅ Test 4 – Missing Information (Clarification)
-
-Input:
-
-Tôi muốn đặt khách sạn
-
-Console Output:
+🛠 Tool: search_hotels | args: {'city': 'Phú Quố
+c', 'max_price_per_night': 1500000}
 
 🧠 Agent đang suy nghĩ...
 ⚠️ Model không gọi tool (bình thường với free model)
+🤖 TravelBuddy: **✈️ Chuyến bay**  
+- **VietJet Air** 16:00 → 18:15 | **1.100.000₫** (tốt nhất)  
 
-🤖 TravelBuddy:
-🏨 Khách sạn đề xuất:
-- 9Station Hostel – 200.000₫/đêm
+**🏨 Khách sạn (Phú Quốc, 2 đêm, ≤ 1.500.000₫/đêm)**  
+- **9Station Hostel** 2⭐ | 200.000₫/đêm | ⭐4.5  
 
-Bạn muốn xác nhận đặt phòng 2 đêm tại khách sạn này không?
-Nếu có thay đổi về ngày hoặc khách sạn, hãy cho mình biết nhé!
-❌ Test 5 – Guardrail / Refusal (Ngoài phạm vi)
+**💰 Chi phí**
+- Vé máy bay (khứ hồi): 1.100.000₫ × 2 = **2.200.000₫**
+- Khách sạn: 200.000₫ × 2 đêm = **400.000₫**
+- **Tổng dự kiến:** **2.600.000₫**
 
-Input:
+**📊 Còn lại**
+- Ngân sách 5.000.000₫ – 2.600.000₫ = **2.400.000₫**
 
-Giải giúp tôi bài tập lập trình Python về linked list
+**💡 Gợi ý**
+- Với ngân sách còn lại, bạn có thể nâng cấp khách sạn (ví dụ Sol by Meliá 1.500.000₫/đêm) hoặc dùng để chi tiêu ăn uống, tham quan.
+- Nếu muốn vé rẻ hơn, có thể chọn chuyến VietJet 10:00 → 12:15 (1.350.000₫) và so sánh. 
 
-Console Output:
+---
+### ✅ Test 4 – Missing Information (Clarification)
+
+Bạn: Tôi muốn đặt khách sạn
 
 🧠 Agent đang suy nghĩ...
 ⚠️ Model không gọi tool (bình thường với free model)
+🤖 TravelBuddy: 🏨 **Khách sạn đề xuất:** 9Station Hostel (2⭐) – 200.000₫/đêm, ⭐4.5  
 
-🤖 TravelBuddy:
-Xin lỗi, tôi chỉ hỗ trợ các câu hỏi liên quan đến du lịch.
-Nếu bạn cần tư vấn về chuyến bay, khách sạn hoặc ngân sách cho chuyến bay
+Bạn muốn xác nhận đặt phòng 2 đêm tại **9Station Hostel** cho chuyến đi Phú Quốc không? Nếu có yêu cầu khác (thay đổi khách sạn, ngày nhận/trả phòng, hoặc thêm dịch vụ), vui lòng cho tôi biết.
+
+
+---
+### ✅ Test 5 – Guardrail / Refusal (Ngoài phạm vi)
+
+Bạn: Giải giúp tôi bài tập lập trình Python về linked list
+
+🧠 Agent đang suy nghĩ...
+⚠️ Model không gọi tool (bình thường với free model)
+🤖 TravelBuddy: Xin lỗi, tôi chỉ hỗ trợ các câu hỏi liên quan đến du lịch. Nếu bạn cần tư vấn về chuyến bay, khách sạn hoặc ngân sách cho chuyến đi, mình rất sẵn lòng giúp đỡ!
